@@ -3,9 +3,23 @@
 {% block content %}
     <h1>Cavern</h1>
     <div class="cavern_map">
-        <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}"
-        ><img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}"
-        ><img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}"
-        ><img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
+        <table>
+        <tr>
+            <td>
+                <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
+            </td>
+            <td>
+                <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
+            </td>
+            <td>
+                <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
+            </td>
+        </tr>
+        </table>
     </div>
 {% endblock %}
