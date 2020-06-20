@@ -8,5 +8,9 @@ def index():
 
 @app.route("/cavern")
 def cavern():
-    x = [1,0,0]
-    return render_template("cavern.html", nav_cavern="active")
+    x = [0,1,1,0]
+    cavern_map = [
+        [0,1,1,0,0],
+        [0,1,1,1,0]
+    ]
+    return render_template("cavern.html", map=cavern_map, nav_cavern="active")

@@ -3,25 +3,15 @@
 {% block content %}
     <h1>Cavern</h1>
     <div class="cavern_map">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <br style="clear:both" />
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <br style="clear:both" />
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <br style="clear:both" />
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
-    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
+        {% for row in map %}
+            {% for cell in row %}
+                {% if cell == 1 %}
+                    <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
+                {% else %}
+                    <img class="floor" src="{{url_for('static', filename = '/images/wall.png') }}">
+                {% endif %}
+            {% endfor %}
+            <br style="clear:both" />
+        {% endfor %}
     <br style="clear:both" />
 {% endblock %}
