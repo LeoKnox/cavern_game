@@ -13,6 +13,8 @@ def cavern():
     cavern_map = []
     random.seed(cavern_seed)
     cavern_map = [0 for _ in range (random.randrange(6,11))]
+    cavern_map.extend([1 for _ in range (5, 10)])
+    cavern_map.extend([0 for _ in range (6, 10)])
     print (cavern_map)
     cavern_map = [
         [0,1,1,0,0],
