@@ -1,5 +1,6 @@
 from application import app
 from flask import render_template
+import random
 
 @app.route("/")
 @app.route("/index")
@@ -8,7 +9,11 @@ def index():
 
 @app.route("/cavern")
 def cavern():
-    x = [0,1,1,0]
+    cavern_seed = random.randrange(1000,9999)*1000
+    cavern_map = []
+    random.seed(cavern_seed)
+    cavern_map = [0 for _ in range (random.randrange(6,11))]
+    print (cavern_map)
     cavern_map = [
         [0,1,1,0,0],
         [0,1,1,1,0]
