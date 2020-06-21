@@ -17,10 +17,5 @@ def cavern():
     cavern_map.extend([0 for _ in range (6, 10)])
     print (cavern_map)
     cavern_map2.append(cavern_map)
-    '''
-    cavern_map = [
-        [0,1,1,0,0],
-        [0,1,1,1,0]
-    ]
-    '''
+    print(cavern_map.index(1))
     return render_template("cavern.html", map=cavern_map2, nav_cavern="active")
