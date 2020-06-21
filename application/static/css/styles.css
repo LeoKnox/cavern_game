@@ -18,14 +18,14 @@ td {
 .floor {
     padding: 0;
     margin: 0;
-    width: 15%;
+    width: 4%;
     float: left;
 }
 
 .cavern_map {
     margin: 0;
     padding: 0;
-    width: 400px;
+    width: 900px;
 }
 
 .nav_ul {
