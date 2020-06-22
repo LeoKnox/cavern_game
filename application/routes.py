@@ -17,12 +17,15 @@ def cavern():
     cavern_map.extend([0 for _ in range (6, 10)])
     print (cavern_map)
     next_line = cavern_map
+    cavern_map2.append(cavern_map)
+    print(cavern_map2)
     if random.randrange(0, 2):
         y = cavern_map.index(1)
         z = cavern_map.index(0,cavern_map.index(1))
         next_line[y-1] = 1
         next_line[z] = 1
-    cavern_map2.append(cavern_map)
-    cavern_map2.append(next_line)
+    #cavern_map2[1] = next_line
+    cavern_map2 = [cavern_map, next_line]
+    print(cavern_map2)
     print(cavern_map.index(1), cavern_map.index(0,cavern_map.index(1)))
     return render_template("cavern.html", map=cavern_map2, nav_cavern="active")
