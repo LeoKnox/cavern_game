@@ -26,12 +26,14 @@ def cavern():
         i += 1
     for x in range(15):
         r = random.randrange(1,4)
-        cavern_map2 = cavern_map[0]
+        cavern_map2 = list(cavern_map[x])
         if r == 1:
-            cavern_map2 = cavern_map[:walls[0]-1] + '1' + cavern_map[walls[0]:]
-            print(cavern_map2)
+            cavern_map2[walls[0]-1] = '1'
+            walls[0] -= 1
         elif r == 2:
             #cavern_map[walls[1]] == '1'
-            print('t')
+            walls[1] += 1
+        cavern_map2 = "".join(cavern_map2)
         cavern_map.append(cavern_map2)
+        print (cavern_map)
     return render_template("cavern.html", map=cavern_map, nav_cavern="active")
