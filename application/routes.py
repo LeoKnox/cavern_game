@@ -14,17 +14,16 @@ def cavern():
     j = '1'
     walls = []
     i = 0
-    while i < 20 and cavern_map[0].find(j) != -1:
-        if cavern_map[0].find(j) == -1:
-            break;
-        t = cavern_map[0].index(j, i)
-        walls.append(t)
+    while i < 20 or cavern_map[0].count(j, i):
         print(walls)
-        i = t
-        if j == '1':
-            j = '0'
-        else:
+        i = cavern_map[0].find(j, i)
+        if i == -1:
+            break
+        walls.append(i)
+        if j == '0':
             j = '1'
+        else:
+            j = '0'
         i += 1
     print(walls)
     return render_template("cavern.html", map=cavern_map, nav_cavern="active")
