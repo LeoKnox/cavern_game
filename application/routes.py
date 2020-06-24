@@ -15,7 +15,6 @@ def cavern():
     walls = []
     i = 0
     while i < 20 or cavern_map[0].count(j, i):
-        print(walls)
         i = cavern_map[0].find(j, i)
         if i == -1:
             break
@@ -25,5 +24,14 @@ def cavern():
         else:
             j = '0'
         i += 1
-    print(walls)
+    for x in range(15):
+        r = random.randrange(1,4)
+        cavern_map2 = cavern_map[0]
+        if r == 1:
+            cavern_map2 = cavern_map[:walls[0]-1] + '1' + cavern_map[walls[0]:]
+            print(cavern_map2)
+        elif r == 2:
+            #cavern_map[walls[1]] == '1'
+            print('t')
+        cavern_map.append(cavern_map2)
     return render_template("cavern.html", map=cavern_map, nav_cavern="active")
