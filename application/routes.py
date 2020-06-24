@@ -31,7 +31,7 @@ def cavern():
             cavern_map2[walls[0]-1] = '1'
             walls[0] -= 1
         elif r == 2:
-            #cavern_map[walls[1]] == '1'
+            cavern_map2[walls[1]] = '1'
             walls[1] += 1
         cavern_map2 = "".join(cavern_map2)
         cavern_map.append(cavern_map2)
