@@ -32,15 +32,15 @@ def cavern():
                 cavern_map2[walls[0]-1] = '1'
                 walls[0] -= 1
             else:
-                cavern_map2[walls[0]+1] = '1'
+                cavern_map2[walls[0]+1] = '0'
                 walls[0] += 1
         elif r == 2:
             if random.randrange(0,3):
                 cavern_map2[walls[1]] = '1'
                 walls[1] += 1
             else:
-                cavern_map2[walls[0]-1] = '1'
-                walls[0] -= 1
+                cavern_map2[walls[1]-1] = '0'
+                walls[1] -= 1
         cavern_map2 = "".join(cavern_map2)
         cavern_map.append(cavern_map2)
         print (cavern_map)
