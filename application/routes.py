@@ -28,11 +28,19 @@ def cavern():
         r = random.randrange(1,4)
         cavern_map2 = list(cavern_map[x])
         if r == 1:
-            cavern_map2[walls[0]-1] = '1'
-            walls[0] -= 1
+            if random.randrange(0,3):
+                cavern_map2[walls[0]-1] = '1'
+                walls[0] -= 1
+            else:
+                cavern_map2[walls[0]+1] = '1'
+                walls[0] += 1
         elif r == 2:
-            cavern_map2[walls[1]] = '1'
-            walls[1] += 1
+            if random.randrange(0,3):
+                cavern_map2[walls[1]] = '1'
+                walls[1] += 1
+            else:
+                cavern_map2[walls[0]-1] = '1'
+                walls[0] -= 1
         cavern_map2 = "".join(cavern_map2)
         cavern_map.append(cavern_map2)
         print (cavern_map)
