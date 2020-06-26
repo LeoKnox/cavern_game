@@ -50,4 +50,5 @@ def cavern():
 def cavern2():
     cavern_seed = random.randrange(1000,9999)*1000
     cavern_map = ['00000001111110000000']
+    cavern_map = cavern_map[0].strip('0')
     return render_template("cavern2.html", map=cavern_map, nav_cavern2="active")
