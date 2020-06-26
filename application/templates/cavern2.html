@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>Cavern</h1>
+    <div class="cavern_map">
+        {% for row in map %}
+            {% for cell in row %}
+                {% if cell == '1' %}
+                    <div>
+                        <img class="floor" src="{{url_for('static', filename = '/images/floor.png') }}">
+                    </div>
+                {% else %}
+                    <div>
+                        <img class="floor" src="{{url_for('static', filename = '/images/wall.png') }}">
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <br style="clear:both" />
+        {% endfor %}
+    <br style="clear:both" />
+{% endblock %}

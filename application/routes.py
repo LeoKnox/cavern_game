@@ -45,3 +45,9 @@ def cavern():
         cavern_map.append(cavern_map2)
         print (cavern_map)
     return render_template("cavern.html", map=cavern_map, nav_cavern="active")
+
+@app.route("/cavern2")
+def cavern2():
+    cavern_seed = random.randrange(1000,9999)*1000
+    cavern_map = ['00000001111110000000']
+    return render_template("cavern2.html", map=cavern_map, nav_cavern2="active")
