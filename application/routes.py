@@ -56,10 +56,12 @@ def cavern2():
     test = []
     while i < 30:
         x = cavern_map[0].index('01', m)
-        y = cavern_map[0].index('10', m)
+        y = cavern_map[0].index('10', x)
         test.append(str(x) + ", " + str(y))
         i += 1
-        m = x
+        m = y
+        print('***')
+        #print(cavern_map[0].index('01', m))
         if cavern_map[0].index('01', m) == -1:
             break
     cavern_map = cavern_map[0].strip('0')
