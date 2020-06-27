@@ -50,6 +50,8 @@ def cavern():
 def cavern2():
     cavern_seed = random.randrange(1000,9999)*1000
     cavern_map = ['00000001111110000000']
+    print(cavern_map[0].index('01'))
+    print(cavern_map[0].index('10'))
     cavern_map = cavern_map[0].strip('0')
     #cavern_map = cavern_map[0].split('1')
     print(cavern_map)
