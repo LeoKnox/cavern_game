@@ -66,4 +66,6 @@ def cavern2():
                 test = '0'
     cavern_row.append(temp)
     print(cavern_row)
+    for j in cavern_row[1::2]:
+        print(j)
     return render_template("cavern2.html", map=cavern_map, nav_cavern2="active")
