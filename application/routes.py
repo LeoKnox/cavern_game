@@ -60,11 +60,11 @@ def cavern2():
             temp += test
         else:
             cavern_row.append(temp)
-            temp = ''
             if test == '0':
                 test = '1'
             else:
                 test = '0'
+            temp = test
     cavern_row.append(temp)
     print(cavern_row)
     paths = random.randrange(0, 2**(len(cavern_row)//2)+1)
