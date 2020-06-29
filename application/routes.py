@@ -54,18 +54,21 @@ def cavern2():
     cavern_row = []
     test = '0'
     temp = ''
-    for i in cavern_map[0]:
-        if i == test:
-            temp += i
+    for i in range(len(cavern_map[0])):
+        print(i)
+        if cavern_map[0][i] == test:
+            temp += test
         else:
             cavern_row.append(temp)
-            temp = i
+            temp = ''
             if test == '0':
                 test = '1'
             else:
                 test = '0'
     cavern_row.append(temp)
     print(cavern_row)
-    for j in cavern_row[1::2]:
-        print(j)
+    paths = random.randrange(0, 2**(len(cavern_row)//2)+1)
+    print(paths)
+    #for j in cavern_row:
+    #    print(j)
     return render_template("cavern2.html", map=cavern_map, nav_cavern2="active")
