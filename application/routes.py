@@ -51,6 +51,19 @@ def cavern2():
     cavern_seed = random.randrange(1000,9999)*1000
     cavern_map = ['00000001111110000000']
     cavern_map = ['00011111100011110000']
+    cavern_row = cavern_map[0].split('0')
+    cavern_row = [i for i in cavern_row if i]
+    print(cavern_row)
+    test = '0'
+    temp = ''
+    i = 0
+    return render_template("cavern2.html", map=cavern_map, nav_cavern2="active")
+
+@app.route("/cavern3")
+def cavern3():
+    cavern_seed = random.randrange(1000,9999)*1000
+    cavern_map = ['00000001111110000000']
+    cavern_map = ['00011111100011110000']
     cavern_row = []
     test = '0'
     temp = ''
