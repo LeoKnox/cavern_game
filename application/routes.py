@@ -50,7 +50,8 @@ def cavern():
 def cavern2():
     cavern_seed = random.randrange(1000,9999)*1000
     cavern_map = ['00000001111110000000']
-    cavern_map = ['00011111100011110000']
+    #cavern_map = ['00011111100011110000']
+    cavern_map = ['01011011100011110010']
     '''
     cavern_row = cavern_map[0].split('0')
     cavern_row = [i for i in cavern_row if i]
@@ -58,19 +59,22 @@ def cavern2():
     '''
     m='1'
     n='0'
-    o=n
     cnt = 0
     pnts = []
     for i in cavern_map[0]:
-        if i == o:
+        if i == n:
             cnt += 1
         else:
             pnts.append(cnt)
             cnt = 1
-            if o == m:
-                o = n
-            else:
-                o = m
+            m,n = n,m
+    pnts.append(cnt)
+    print(pnts)
+    for i in range(1,len(pnts),2):
+        x = random.randint(0,4)
+        if x == 1:
+            pnts[i-1] -= 1
+            pnts[i] += 1
     print(pnts)
     return render_template("cavern2.html", map=cavern_map, nav_cavern2="active")
 
