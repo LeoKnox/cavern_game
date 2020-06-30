@@ -62,18 +62,15 @@ def cavern2():
     cnt = 0
     pnts = []
     for i in cavern_map[0]:
-        print(f'o:{o} i:{i}')
         if i == o:
             cnt += 1
         else:
-            print(f'o:{o} i:{i}')
-            print(cnt)
             pnts.append(cnt)
-            cnt = 0
-            if o == n:
-                o == m
+            cnt = 1
+            if o == m:
+                o = n
             else:
-                o == n
+                o = m
     print(pnts)
     return render_template("cavern2.html", map=cavern_map, nav_cavern2="active")
 
