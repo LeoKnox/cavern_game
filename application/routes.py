@@ -64,7 +64,6 @@ def cavern2():
         if x == test:
             temp += 1
         else:
-            temp += 1
             test = '1'
             i.append(temp)
             temp = 0
@@ -80,16 +79,12 @@ def cavern3():
     test = '0'
     temp = ''
     for i in range(len(cavern_map[0])):
-        print(i)
+        print("###" + str(i))
         if cavern_map[0][i] == test:
             temp += test
         else:
-            cavern_row.append(temp)
-            if test == '0':
-                test = '1'
-            else:
-                test = '0'
-            temp = test
+            cavern_row.append(i)
+            temp = '1' if temp == '0' else '0'
     cavern_row.append(temp)
     print(cavern_row)
     paths = random.randrange(0, 2**(len(cavern_row)//2)+1)
