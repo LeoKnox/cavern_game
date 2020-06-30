@@ -56,18 +56,25 @@ def cavern2():
     cavern_row = [i for i in cavern_row if i]
     print(cavern_row)
     '''
-    test = '0'
-    temp = 0
-    i = []
-    for x in cavern_map[0]:
-        print (x + " " + str(temp))
-        if x == test:
-            temp += 1
+    m='1'
+    n='0'
+    o=n
+    cnt = 0
+    pnts = []
+    for i in cavern_map[0]:
+        print(f'o:{o} i:{i}')
+        if i == o:
+            cnt += 1
         else:
-            test = '1'
-            i.append(temp)
-            temp = 0
-    print(i)
+            print(f'o:{o} i:{i}')
+            print(cnt)
+            pnts.append(cnt)
+            cnt = 0
+            if o == n:
+                o == m
+            else:
+                o == n
+    print(pnts)
     return render_template("cavern2.html", map=cavern_map, nav_cavern2="active")
 
 @app.route("/cavern3")
