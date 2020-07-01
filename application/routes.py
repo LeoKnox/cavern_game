@@ -69,13 +69,22 @@ def cavern2():
             cnt = 1
             m,n = n,m
     pnts.append(cnt)
-    print(pnts)
     for i in range(1,len(pnts),2):
         x = random.randint(0,4)
         if x == 1:
             pnts[i-1] -= 1
             pnts[i] += 1
     print(pnts)
+    new_row = ""
+    b = '0'
+    for i in pnts:
+        new_row += b*i
+        if b == '0':
+            b = '1'
+        else:
+            b = '0'
+    print(new_row)
+    cavern_map.append(new_row)
     return render_template("cavern2.html", map=cavern_map, nav_cavern2="active")
 
 @app.route("/cavern3")
