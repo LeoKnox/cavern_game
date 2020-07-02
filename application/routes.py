@@ -75,8 +75,8 @@ def cavern2():
             pnts[i-1] -= 1
             pnts[i] += 1
     print(pnts)
+    new_row = ""
     for l in range(15):
-        new_row = ""
         b = '0'
         li = ['0', '1', '2', '3']
         x = random.choices(li, k=8)
