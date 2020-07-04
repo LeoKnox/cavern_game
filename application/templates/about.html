@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1>About</h1>
+    <div class="content">
+        <p>Kanji web application.</p>
+        <p>
+            I built this app because I wanted an app to practice with Kanji most apps are just quizes. I also wanted
+            something was divided by level.
+        </p>
+
+        <p>Technologies used:</p>
+        <p>
+            &emsp; Kanji data and information is stored in a mysql database. Accessing<br/>
+            the database by grade using python. Searches in mysql including counts and distinct info.
+        </p>
+        <p>
+            I used flask for webserving. I like that it's a lightweight framework. I let's me
+            write more code using python in the html page. Also it allows me to use more direct
+            mysql commands in the routing. Allowing to test and write mysql commands using mysql
+            workbench to verify results.
+        </p>
+        <p>
+            Javascript is used to for a slider to time how long it displays the definition before
+            displaying the answer. Also Javascript is used for the drawing practice window using
+            svg. Async/Await used to correct timing issue to allow repeat at end of database.
+        </p>
+    </div>
+{% endblock %}
