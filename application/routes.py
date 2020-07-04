@@ -5,6 +5,19 @@ import random
 @app.route("/")
 @app.route("/index")
 def index():
+     j = '1'
+    walls = []
+    i = 0
+    while i < 20 or cavern_map[0].count(j, i):
+        i = cavern_map[0].find(j, i)
+        if i == -1:
+            break
+        walls.append(i)
+        if j == '0':
+            j = '1'
+        else:
+            j = '0'
+    cavern_map = ['00011111100011110000']
     return render_template("index.html", nav_index="active")
 
 @app.route("/cavern")
@@ -48,6 +61,11 @@ def cavern():
 
 @app.route("/cavern2")
 def cavern2():
+    return render_template("cavern2.html", map=cavern_map, nav_cavern2="active")
+
+
+@app.route("/cavern4")
+def cavern4():
     cavern_seed = random.randrange(1000,9999)*1000
     cavern_map = ['00000001111110000000']
     cavern_map = ['00011111100011110000']
@@ -69,19 +87,19 @@ def cavern2():
             cnt = 1
             m,n = n,m
     pnts.append(cnt)
-    for i in range(1,len(pnts),2):
-        x = random.randint(0,4)
-        if x == 1:
-            pnts[i-1] -= 1
-            pnts[i] += 1
+    for l in range(1, 15):
+        for i in range(1,len(pnts),2):
+            x = random.randint(0,4)
+            if x == 1:
+                pnts[i-1] -= 1
+                pnts[i] += 1
     print(pnts)
-    new_row = ""
-    for l in range(15):
         b = '0'
         li = ['0', '1', '2', '3']
         x = random.choices(li, k=8)
         print (x)
         for i in pnts:
+            new_row = ""
             new_row += b*i
             if b == '0':
                 b = '1'
