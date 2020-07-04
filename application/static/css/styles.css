@@ -245,3 +245,8 @@ h1 {
 #grade1:hover {
     color: green;
 }
+
+.about_dd {
+    font-size: .8em;
+    color: blue;
+}
